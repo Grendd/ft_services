@@ -8,7 +8,7 @@ RUN mkdir -p /var/www
 RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz \
 && mv /wordpress /var/www/
 
-COPY wp-config.php /www/wordpress/
+COPY wp-config.php /var/www/wordpress/
 
 COPY init.sh ./
 
