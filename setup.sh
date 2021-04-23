@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 echo  "\e[32mMinikube setup...\e[0m"
 minikube delete
@@ -8,7 +9,6 @@ echo  "\e[32mDocker ENV...\e[0m"
 eval $(minikube docker-env)
 
 echo  "\e[32mAdd addons...\e[0m"
-#minikube addons enable ingress
 minikube addons enable metallb
 
 echo  "\e[32mDocker build images...\e[0m"
@@ -23,5 +23,3 @@ kubectl apply -f ./srcs/nginx/nginx.yaml
 kubectl apply -f ./srcs/mysql/mysql.yaml
 kubectl apply -f ./srcs/phpMyAdmin/phpmyadmin.yaml
 kubectl apply -f ./srcs/wordpress/wordpress.yaml
-
-#kubectl apply -f ./srcs/ingress.yaml

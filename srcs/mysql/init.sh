@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Install MariaDB database(mariadb-install-db is a symlink to mysql_install_db).
 mariadb-install-db -u root
